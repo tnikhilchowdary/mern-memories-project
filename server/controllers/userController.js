@@ -1,5 +1,16 @@
 import User from "../schema/userSchema.js";
 
+export const getAllUsers = async (req, res)  => {
+    try{
+        const userDetail = await User.find({});
+        res.status(200).json({userDetail});
+    }
+    catch(error){
+        res.status(200).json({message:error.message, message:"Error Fetching Data"});
+    }
+}
+
+
 export const SignupUser = async (req, res) => {
     try{
         const {name, email, password} = req.body;
@@ -41,4 +52,6 @@ export const LoginUser = async (req, res) => {
         res.status(500).json({error:error.message, message:"Error in Login"});
     }
 }
+
+
 
