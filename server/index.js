@@ -1,9 +1,11 @@
 import express from "express";
 import connect from "./db/configDb.js";
+import cors from "cors";
 import userRoutes from "./routes/userRoute.js";
 
 const PORT = 5000;
 const app = express();
+app.use(cors());
 app.use(express.json());
 connect();
 
