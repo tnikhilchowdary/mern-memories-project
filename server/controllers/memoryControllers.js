@@ -57,12 +57,10 @@ export const updateData = async (req, res) => {
     }
 }
 
-const deleteUpdate = async(req, res) => {
+export const deleteUpdate = async(req, res) => {
     try{
-        const deleteMemory = await findByIdandDelete(
-            id,
-            {new:true}
-        )
+        const {id} = req.params;
+        const deleteMemory = await Memory.findByIdAndDelete(id);
         if(!deleteMemory){
             return res.status(401).json({message:"Memory Not Found"});
         }
