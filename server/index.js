@@ -2,14 +2,16 @@ import express from "express";
 import connect from "./db/configDb.js";
 import cors from "cors";
 import userRoutes from "./routes/userRoute.js";
+import memoryRoute from "./routes/memoryRoutes.js";
 
-const PORT = 5000;
+const PORT = 6000;
 const app = express();
 app.use(cors());
 app.use(express.json());
 connect();
 
 app.use("/api", userRoutes);
+app.use("/api/memory", memoryRoute);
 app.get("/", (req, res) => {
     res.send("Welcome to the Node js Server");
 })
