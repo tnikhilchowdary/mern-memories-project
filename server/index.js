@@ -1,10 +1,10 @@
 import express from "express";
 import connect from "./db/configDb.js";
-import cors from "cors";
 import userRoutes from "./routes/userRoute.js";
 import memoryRoute from "./routes/memoryRoutes.js";
+import cors from "cors";
 
-const PORT = 6000;
+const PORT = 8000;
 const app = express();
 app.use(cors());
 app.use(express.json());
