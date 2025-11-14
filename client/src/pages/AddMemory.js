@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Data from "../components/fetchingUserData.js";
+import "./AddMemory.css";
 
 const AddMemory = () => {
   const [form, setForm] = useState({
@@ -35,10 +36,11 @@ const AddMemory = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome to the Add Memory in React</h1>
+    <div className="add-memory-container">
 
-      <form onSubmit={handleSubmit}>
+      <h1 className="add-memory-title">Welcome to the Add Memory in React</h1>
+
+      <form onSubmit={handleSubmit} className="add-memory-form">
         <input
           type="text"
           name="title"
@@ -46,7 +48,6 @@ const AddMemory = () => {
           value={form.title}
           onChange={handleChange}
         />
-        <br />
 
         <input
           type="text"
@@ -55,7 +56,6 @@ const AddMemory = () => {
           value={form.description}
           onChange={handleChange}
         />
-        <br />
 
         <input
           type="text"
@@ -64,13 +64,11 @@ const AddMemory = () => {
           value={form.image}
           onChange={handleChange}
         />
-        <br />
 
         <button type="submit">Add Memory</button>
       </form>
+
       <Data />
-      <div>
-      </div>
     </div>
   );
 };
