@@ -26,6 +26,7 @@ const FetchingUserData = () => {
                     <div key={item._id}>
                         <h2>{item.title}</h2>
                         <p>{item.description}</p>
+                        <button>Delete</button>
                     </div>
                 ))
             )}
